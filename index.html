@@ -12,7 +12,7 @@
     </style>
 </head>
 <body>
-<script src="js/three.r74.min.js"></script>
+<script src="three.r74.min.js"></script>
 <script>
     const params = new Proxy(new URLSearchParams(window.location.search), {
         get: (searchParams, prop) => searchParams.get(prop),
@@ -57,6 +57,6 @@
     const color2 = randArray(2, tokenId, colors);
     const bgcolor = randArray(3, tokenId, colors);
 </script>
-<script src="js/index.js"></script>
+<script src="index.js"></script>
 </body>
 </html>
