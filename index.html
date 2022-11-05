@@ -1,0 +1,62 @@
+<html>
+<head>
+    <style>
+        .dg {
+            display: none;
+        }
+
+        canvas {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<script src="js/three.r74.min.js"></script>
+<script>
+    const params = new Proxy(new URLSearchParams(window.location.search), {
+        get: (searchParams, prop) => searchParams.get(prop),
+    });
+    // Get the value of "some_key" in eg "https://example.com/?some_key=some_value"
+    let tokenId = params.tokenId; // "some_value"
+
+    function getRandomInt(tokenId, min, max) {
+        return (min + tokenId % (max - min + 1));
+    }
+
+    const colors = [
+        "#E7434F",
+        "#E7973D",
+        "#E7DC4E",
+        "#5CE75D",
+        "#2981E7",
+        "#5D21E7",
+        "#E777E4",
+        "#E7E7E7",
+        "#312624",
+        "#E7969F",
+        "#E7B277",
+        "#E7DD8F",
+        "#8CE7C3",
+        "#87B2E7",
+        "#A082E7",
+        "#E4B7E7"
+    ];
+
+    function randArray(prefix, tokenId, array) {
+        const k = prefix + tokenId;
+        return array[k % array.length];
+    }
+
+
+    const speed = Math.random();
+    const radius = Math.random();
+    const dieSpeed = 0.0035;
+    const blur = getRandomInt(parseInt(tokenId), 1, 6);
+    const color1 = randArray(1, tokenId, colors);
+    const color2 = randArray(2, tokenId, colors);
+    const bgcolor = randArray(3, tokenId, colors);
+</script>
+<script src="js/index.js"></script>
+</body>
+</html>
