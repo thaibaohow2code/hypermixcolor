@@ -1007,7 +1007,7 @@
         web3 = new Web3(new Web3.providers.HttpProvider("http://localhost:8545"));
     }
 
-    const myContract = new web3.eth.Contract(abi, "0xfbae493faf94b3b3773c13f0dd36dd508d00a86a")
+    const myContract = new web3.eth.Contract(abi, "0x9e339b1b85b00feffa44b1a120702c5a40935391")
     const value = myContract.methods.getParamValues(1).call();
     value.then(function (result) {
         console.log("------", result);
